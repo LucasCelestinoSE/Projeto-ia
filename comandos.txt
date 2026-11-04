@@ -1,0 +1,39 @@
+INSTALAR O SUMO - Ubuntu 26.04 / WSL2
+====================================
+
+Passo 1 - Instalar SUMO e pip:
+sudo apt update && sudo apt install -y sumo sumo-tools sumo-doc python3-pip
+
+Passo 2 - Verificar instalacao:
+sumo --version
+netconvert --version
+echo $SUMO_HOME
+
+Passo 3 - Se SUMO_HOME estiver vazio, configurar:
+export SUMO_HOME=/usr/share/sumo
+echo 'export SUMO_HOME=/usr/share/sumo' >> ~/.bashrc
+
+------------------------------------
+RODAR A SIMULACAO
+====================================
+
+Passo 4 - Entrar na pasta e gerar a rede:
+cd ~/sumo-projeto
+chmod +x build.sh run.sh
+./build.sh
+
+Passo 5 - Rodar simulacao (modo texto):
+./run.sh
+
+Passo 6 - Rodar com interface grafica (so se tiver tela):
+sumo-gui -c simulation.sumocfg
+
+------------------------------------
+PYTHON / TRACI
+====================================
+
+Passo 7 - Instalar bibliotecas Python:
+pip3 install -r requirements.txt --break-system-packages
+
+Passo 8 - Rodar exemplo TraCI:
+python3 scripts/run_traci.py

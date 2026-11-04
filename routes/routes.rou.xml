@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="50"/>
+
+    <!-- Norte -> Sul -->
+    <route id="NS" edges="N_C C_S"/>
+    <!-- Sul -> Norte -->
+    <route id="SN" edges="S_C C_N"/>
+    <!-- Oeste -> Leste -->
+    <route id="WE" edges="W_C C_E"/>
+    <!-- Leste -> Oeste -->
+    <route id="EW" edges="E_C C_W"/>
+
+    <flow id="flow_NS" route="NS" type="car" begin="0" end="3600" vehsPerHour="400"/>
+    <flow id="flow_SN" route="SN" type="car" begin="0" end="3600" vehsPerHour="400"/>
+    <flow id="flow_WE" route="WE" type="car" begin="0" end="3600" vehsPerHour="300"/>
+    <flow id="flow_EW" route="EW" type="car" begin="0" end="3600" vehsPerHour="300"/>
+</routes>

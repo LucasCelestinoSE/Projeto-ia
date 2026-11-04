@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 8 arestas bidirecionais ligando as bordas ao centro -->
+<edges>
+    <edge id="N_C" from="north" to="center" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="C_N" from="center" to="north" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="S_C" from="south" to="center" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="C_S" from="center" to="south" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="E_C" from="east" to="center" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="C_E" from="center" to="east" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="W_C" from="west" to="center" priority="1" numLanes="1" speed="13.9"/>
+    <edge id="C_W" from="center" to="west" priority="1" numLanes="1" speed="13.9"/>
+</edges>

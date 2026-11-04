@@ -1,0 +1,3 @@
+eclipse-sumo>=1.25
+traci>=1.25
+sumolib>=1.25

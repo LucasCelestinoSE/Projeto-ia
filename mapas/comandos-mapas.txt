@@ -1,0 +1,28 @@
+COMANDOS MAPAS - Parte 1 (Natalia)
+====================================
+
+# 1. Copiar zip do Downloads (Windows) para o projeto:
+cp "/mnt/c/Users/lucas/Downloads/Parte 1 (Natália)-20261016T183727Z-1-001.zip" "/home/lucas/sumo-projeto/"
+
+# 2. Ver conteudo do zip (sem extrair):
+unzip -l "/home/lucas/sumo-projeto/Parte 1 (Natália)-20261016T183727Z-1-001.zip"
+
+# 3. Extrair zip no projeto:
+unzip -o "/home/lucas/sumo-projeto/Parte 1 (Natália)-20261016T183727Z-1-001.zip" -d "/home/lucas/sumo-projeto/"
+
+# 4. Gerar rede SUMO de Aracaju (map.osm) - so mapa, sem simulacao:
+netconvert --osm-files "/home/lucas/sumo-projeto/Parte 1 (Natália)/map.osm" --output-file "/home/lucas/sumo-projeto/networks/aracaju.net.xml" --geometry.remove --roundabouts.guess --ramps.guess --junctions.join --tls.guess-signals --tls.discard-simple --tls.join --lefthand false
+
+# 5. Gerar rede SUMO da UFS Campus (map (1).osm) - so mapa, sem simulacao:
+netconvert --osm-files "/home/lucas/sumo-projeto/Parte 1 (Natália)/map (1).osm" --output-file "/home/lucas/sumo-projeto/networks/ufs-campus.net.xml" --geometry.remove --roundabouts.guess --ramps.guess --junctions.join --tls.guess-signals --tls.discard-simple --tls.join --lefthand false
+
+# 6. Ver estatisticas da rede:
+python3 /usr/share/sumo/tools/net/network_statistics.py -n "/home/lucas/sumo-projeto/networks/aracaju.net.xml"
+python3 /usr/share/sumo/tools/net/network_statistics.py -n "/home/lucas/sumo-projeto/networks/ufs-campus.net.xml"
+
+# 7. Ver so o mapa (sem simulacao) no SUMO-GUI:
+sumo-gui -c view-aracaju.sumocfg
+sumo-gui -c view-ufs-campus.sumocfg
+# ou direto pela rede:
+sumo-gui -n networks/aracaju.net.xml
+sumo-gui -n networks/ufs-campus.net.xml
